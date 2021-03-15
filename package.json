@@ -1,0 +1,44 @@
+{
+  "name": "shstore",
+  "version": "1.0.0",
+  "description": "Second-hand store Side Project",
+  "main": "init.js",
+  "scripts": {
+    "dev:server": "nodemon --exec babel-node ./src/init.js --delay 1 ",
+    "dev:assets": "",
+    "build:server": "",
+    "build:assets": "",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RHU5/seconde-hand-store-2021-side.git"
+  },
+  "author": "rhu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RHU5/seconde-hand-store-2021-side/issues"
+  },
+  "homepage": "https://github.com/RHU5/seconde-hand-store-2021-side#readme",
+  "dependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10",
+    "@babel/preset-env": "^7.13.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.4.1",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.7",
+    "pug": "^3.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.22.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-html": "^6.1.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "2.2.1"
+  }
+}
