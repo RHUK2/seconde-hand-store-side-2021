@@ -1,5 +1,6 @@
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
-// const UserSchema = mongoose.Schema();
-// const { ObjectId } = UserSchema;
-// console.log(mongoose.Schema)
+const UserSchema = new mongoose.Schema({});
+
+const model = mongoose.model('User', UserSchema);
+export default model;

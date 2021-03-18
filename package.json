@@ -4,10 +4,10 @@
   "description": "Second-hand store Side Project",
   "main": "init.js",
   "scripts": {
-    "dev:server": "nodemon --exec babel-node ./src/init.js --delay 1 ",
-    "dev:assets": "",
+    "dev:server": "nodemon --exec babel-node ./src/init.js --delay 1",
+    "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
     "build:server": "",
-    "build:assets": "",
+    "build:assets": "cd src && WEBPACK_ENV=production webpack",
     "start": ""
   },
   "repository": {
@@ -25,16 +25,25 @@
     "@babel/core": "^7.13.10",
     "@babel/node": "^7.13.10",
     "@babel/preset-env": "^7.13.10",
+    "autoprefixer": "^10.2.5",
     "aws-sdk": "^2.864.0",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^5.1.3",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "helmet": "^4.4.1",
+    "mini-css-extract-plugin": "^1.3.9",
     "mongoose": "^5.11.15",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
     "multer-s3": "^2.9.0",
     "nodemon": "^2.0.7",
-    "pug": "^3.0.2"
+    "postcss-loader": "^5.2.0",
+    "pug": "^3.0.2",
+    "sass": "^1.32.8",
+    "sass-loader": "^11.0.1",
+    "webpack": "^5.26.3",
+    "webpack-cli": "^4.5.0"
   },
   "devDependencies": {
     "eslint": "^7.22.0",

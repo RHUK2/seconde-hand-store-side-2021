@@ -1,13 +1,47 @@
-nav.nav-container
+nav.nav
     div.nav__column
         a(href=routes.home)
-            img(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/gift-box-128px.png")
-            span 박스마켓
+            img.logo__image(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/logo-box-market.png")
     div.nav__column
-        a(href=routes.login) 로그인
-        a(href=routes.join) 회원가입
+        a.nav__login(href=routes.login)
+            i.fas.fa-sign-in-alt
+            span 로그인
+        a.nav__join(href=routes.join) 
+            i.fas.fa-user-plus
+            span 회원가입
     div.nav__column
         ul
-            li 경기도
-            li 서울특별시
-            li 인천광역시
+            li 
+                a(href="#") 서울
+            li 
+                a(href="#") 부산
+            li 
+                a(href="#") 대구
+            li 
+                a(href="#") 인천
+            li 
+                a(href="#") 광주
+            li 
+                a(href="#") 대전
+            li 
+                a(href="#") 울산
+            li 
+                a(href="#") 세종
+            li 
+                a(href="#") 경기도
+            li 
+                a(href="#") 강원도
+            li 
+                a(href="#") 충청북도
+            li 
+                a(href="#") 충청남도
+            li 
+                a(href="#") 전라북도
+            li 
+                a(href="#") 전라남도
+            li 
+                a(href="#") 경상북도
+            li 
+                a(href="#") 경상남도
+            li 
+                a(href="#") 제주도
