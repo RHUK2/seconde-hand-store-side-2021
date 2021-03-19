@@ -11,7 +11,7 @@ import routes from './routes';
 
 export const localMiddleware = (req, res, next) => {
   res.locals.routes = routes;
-  res.locals.webTitle = 'BOX MARKET';
+  res.locals.webTitle = '박스마켓';
   next();
 };
 

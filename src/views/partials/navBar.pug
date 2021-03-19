@@ -1,15 +1,16 @@
 nav.nav
-    div.nav__column
-        a(href=routes.home)
-            img.logo__image(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/logo-box-market.png")
-    div.nav__column
+    div.nav__col
+        div.logo
+            a.logo__link(href=routes.home)
+                img.logo__image(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/logo-box-market.png")
+    div.nav__col
         a.nav__login(href=routes.login)
             i.fas.fa-sign-in-alt
             span 로그인
         a.nav__join(href=routes.join) 
             i.fas.fa-user-plus
             span 회원가입
-    div.nav__column
+    div.nav__col
         ul
             li 
                 a(href="#") 서울

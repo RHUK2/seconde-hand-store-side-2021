@@ -3,9 +3,12 @@
 @import './config/variable.scss';
 @import './config/common.scss';
 
-@import './components/logo.scss';
+@import './blocks/logo.scss';
 
 @import './partials/navBar.scss';
 @import './partials/footer.scss';
 
-@import './main.scss';
+@import './pages/join.scss';
+@import './pages/login.scss';
+
+@import './layout.scss';

@@ -7,30 +7,20 @@
   width: $nav-width;
   height: 100vh;
   background-color: white;
-  min-height: 700px;
+  min-height: 800px;
   border: 1px solid black;
-  &__column:nth-of-type(1) {
+  overflow: auto;
+  &__col:nth-of-type(1) {
     display: flex;
     align-items: flex-end;
     height: 15%;
   }
-  &__column:nth-of-type(2) {
+  &__col:nth-of-type(2) {
     display: flex;
     align-items: center;
     height: 10%;
-    .nav__login {
-      margin-right: 15px;
-    }
-    .nav__login,
-    .nav__join {
-      padding-bottom: 10px;
-      border-bottom: 1px solid black;
-      i {
-        margin-right: 5px;
-      }
-    }
   }
-  &__column:nth-of-type(3) {
+  &__col:nth-of-type(3) {
     display: flex;
     align-items: center;
     height: 60%;
@@ -39,6 +29,17 @@
       flex-direction: column;
       justify-content: space-between;
       height: 100%;
+    }
+  }
+  &__login {
+    margin-right: 15px;
+  }
+  &__login,
+  &__join {
+    padding-bottom: 10px;
+    border-bottom: 1px solid black;
+    i {
+      margin-right: 5px;
     }
   }
 }
