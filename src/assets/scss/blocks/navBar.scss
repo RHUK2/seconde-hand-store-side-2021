@@ -1,0 +1,87 @@
+.nav-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  box-shadow: 1px 0px 3px black;
+  &__col:first-of-type {
+    width: 33.3%;
+    position: relative;
+    left: 20px;
+    i {
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+  &__col:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    width: 33.3%;
+  }
+  &__col:last-of-type {
+    display: flex;
+    justify-content: flex-end;
+    width: 33.3%;
+    position: relative;
+    right: 30px;
+    i {
+      font-size: 22px;
+      cursor: pointer;
+    }
+  }
+}
+.wrapper-sidebar {
+  display: none;
+  .nav-sidebar {
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0px;
+    z-index: 100;
+    width: 320px;
+    height: 100vh;
+    overflow-y: auto;
+    background-color: white;
+    box-shadow: 0px 1px 3px black;
+    &__col:first-of-type {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 20px;
+      i {
+        position: relative;
+        right: 15px;
+        font-size: 25px;
+        cursor: pointer;
+      }
+    }
+    &__col:nth-of-type(2) {
+      display: flex;
+      justify-content: center;
+      margin-top: 10px;
+    }
+    &__col:nth-of-type(3) {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+    }
+    &__col:last-of-type {
+      margin-top: 30px;
+    }
+  }
+  &__blank {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+    width: 100%;
+    height: 100vh;
+  }
+}
+
+@media all and (min-width: 767px) and (max-width: 1023px) {
+  /*767 이상부터 작동하는 내용(태블릿) */
+}
+
+@media all and (min-width: 1023px) {
+  /*1024 이상부터 작동하는 내용 (데스크탑)*/
+}

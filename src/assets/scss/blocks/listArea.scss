@@ -1,0 +1,15 @@
+.list-area {
+  //   display: flex;
+  //   flex-direction: column;
+  li {
+    a {
+      display: block;
+      border-bottom: 1px solid black;
+      padding: 15px;
+      font-size: 20px;
+    }
+  }
+  li:first-of-type {
+    border-top: 1px solid black;
+  }
+}

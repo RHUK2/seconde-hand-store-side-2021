@@ -1,0 +1,21 @@
+.enter {
+  &__login-link {
+    margin-right: 20px;
+    i {
+      margin-right: 5px;
+    }
+    i,
+    span {
+      font-size: 17px;
+    }
+  }
+  &__join-link {
+    i {
+      margin-right: 5px;
+    }
+    i,
+    span {
+      font-size: 17px;
+    }
+  }
+}

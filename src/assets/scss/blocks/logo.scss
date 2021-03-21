@@ -1,6 +1,10 @@
 .logo {
   &__image {
     width: 200px;
-    height: 60px;
+    height: auto;
+    &--nav {
+      width: auto;
+      height: 40px;
+    }
   }
 }
