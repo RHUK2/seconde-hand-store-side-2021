@@ -11,6 +11,10 @@
     i {
       font-size: 22px;
       cursor: pointer;
+      transition: transform 0.1s linear;
+    }
+    i:hover {
+      transform: scale(1.3);
     }
   }
   &__col:nth-of-type(2) {
@@ -27,61 +31,76 @@
     i {
       font-size: 22px;
       cursor: pointer;
+      transition: transform 0.1s linear;
+    }
+    i:hover {
+      transform: scale(1.3);
     }
   }
 }
-.wrapper-sidebar {
-  display: none;
-  .nav-sidebar {
+.nav-sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  top: 0px;
+  z-index: 100;
+  width: 320px;
+  height: 100vh;
+  overflow-y: auto;
+  background-color: white;
+  box-shadow: 0px 1px 3px black;
+  transform: translate(-320px);
+  transition: all 0.5s ease-in-out;
+  &__col:first-of-type {
     display: flex;
-    flex-direction: column;
-    position: fixed;
-    top: 0px;
-    z-index: 100;
-    width: 320px;
-    height: 100vh;
-    overflow-y: auto;
-    background-color: white;
-    box-shadow: 0px 1px 3px black;
-    &__col:first-of-type {
-      display: flex;
-      justify-content: flex-end;
-      margin-top: 20px;
-      i {
-        position: relative;
-        right: 15px;
-        font-size: 25px;
-        cursor: pointer;
-      }
+    justify-content: flex-end;
+    margin-top: 20px;
+    i {
+      position: relative;
+      right: 15px;
+      font-size: 25px;
+      cursor: pointer;
+      transition: transform 0.1s linear;
     }
-    &__col:nth-of-type(2) {
-      display: flex;
-      justify-content: center;
-      margin-top: 10px;
-    }
-    &__col:nth-of-type(3) {
-      margin-top: 30px;
-      display: flex;
-      justify-content: center;
-    }
-    &__col:last-of-type {
-      margin-top: 30px;
+    i:hover {
+      transform: scale(1.3);
     }
   }
-  &__blank {
-    background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    top: 0px;
-    z-index: 99;
-    width: 100%;
-    height: 100vh;
+  &__col:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+  }
+  &__col:nth-of-type(3) {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+  }
+  &__col:last-of-type {
+    margin-top: 30px;
   }
 }
-
+.blank {
+  background-color: black;
+  position: fixed;
+  top: 0px;
+  z-index: 99;
+  width: 100vw;
+  height: 100vh;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
 @media all and (min-width: 767px) and (max-width: 1023px) {
   /*767 이상부터 작동하는 내용(태블릿) */
 }
 
 @media all and (min-width: 1023px) {
-  /*1024 이상부터 작동하는 내용 (데스크탑)*/
+  .nav-sidebar {
+    // visibility: visible;
+    transform: translate(0px);
+  }
+  .nav-header {
+    visibility: hidden;
+  }
 }

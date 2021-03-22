@@ -1,20 +1,34 @@
 const bars = document.getElementById('jsBars');
-const times = document.getElementById('jsTimes');
+const sidebarTimes = document.getElementById('jsSidebarTimes');
 const sidebar = document.getElementById('jsSidebar');
-const sidebarBlank = document.getElementById('jsSidebarBlank');
+const blank = document.getElementById('jsBlank');
+const searchTimes = document.getElementById('jsSearchTimes');
+const headerSearch = document.getElementById('jsHeaderSearch');
+const search = document.getElementById('jsSearch');
 
 const openSidebar = () => {
-  sidebar.classList.add('show');
+  sidebar.classList.add('show-sidebar');
+  blank.classList.add('show-blank');
 };
 
 const closeSidebar = () => {
-  sidebar.classList.remove('show');
+  sidebar.classList.remove('show-sidebar');
+  blank.classList.remove('show-blank');
+};
+
+const openSearchbar = () => {
+  search.classList.add('show-search');
+};
+const closeSearchbar = () => {
+  search.classList.remove('show-search');
 };
 
 const init = () => {
   bars.addEventListener('click', openSidebar);
-  times.addEventListener('click', closeSidebar);
-  sidebarBlank.addEventListener('click', closeSidebar);
+  sidebarTimes.addEventListener('click', closeSidebar);
+  blank.addEventListener('click', closeSidebar);
+  headerSearch.addEventListener('click', openSearchbar);
+  searchTimes.addEventListener('click', closeSearchbar);
 };
 
 if (bars) {

@@ -1,3 +1,12 @@
-.show {
-  display: block;
+.show-sidebar {
+  // visibility: visible;
+  transform: translate(0px);
+}
+.show-blank {
+  visibility: visible;
+  opacity: 0.5;
+}
+.show-search {
+  visibility: visible;
+  opacity: 1;
 }

@@ -1,0 +1,49 @@
+.search {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 60px;
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+  &__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100%;
+    input {
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+      padding: 0px 15px;
+      border: none;
+      outline: none;
+    }
+  }
+  &__icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20%;
+    background-color: $red;
+    height: 100%;
+    i {
+      font-size: 30px;
+      color: white;
+      cursor: pointer;
+      transition: all 0.1s linear;
+    }
+    i:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+@media all and (min-width: 1023px) {
+  .search {
+    visibility: visible;
+    opacity: 1;
+  }
+}
