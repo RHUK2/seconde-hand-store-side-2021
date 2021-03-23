@@ -1,8 +1,8 @@
 .list-area {
   li {
+    border-bottom: 1px solid black;
     a {
       display: block;
-      border-bottom: 1px solid black;
       padding: 15px 30px;
       font-size: 20px;
       transition: all 0.1s linear;

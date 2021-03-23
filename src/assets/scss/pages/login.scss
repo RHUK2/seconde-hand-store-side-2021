@@ -3,18 +3,27 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 500px;
-  height: 550px;
-  box-shadow: 1px 1px 10px black;
+  width: 100%;
+  height: 100%;
   &__form {
     display: flex;
     flex-direction: column;
     input {
       margin-top: 20px;
-      width: 350px;
-      height: 50px;
-      padding: 10px;
+      width: 300px;
+      padding: 20px;
       font-size: 17px;
+    }
+    input[type='submit'] {
+      background-color: $red;
+      color: white;
+      font-weight: 700;
+      font-size: 23px;
+      padding: 10px;
+      border-radius: 20px;
+      border: none;
+      cursor: pointer;
+      outline: none;
     }
   }
   &__join-link {
@@ -24,10 +33,22 @@
     margin-top: 20px;
     background-color: $yellow;
     color: black;
-    width: 350px;
-    height: 50px;
+    width: 300px;
+    padding: 14px;
     border-radius: 50px;
-    font-weight: 500;
-    font-size: 17px;
+    font-weight: 700;
+    font-size: 23px;
+  }
+}
+@media all and (min-width: 1023px) {
+  .login {
+    &__form {
+      input {
+        width: 400px;
+      }
+    }
+    &__join-link {
+      width: 400px;
+    }
   }
 }

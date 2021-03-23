@@ -8,8 +8,10 @@ html(lang="en")
         link(rel="icon", href="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/gift-box-16px.png")
         title #{pageTitle} | #{webTitle}
     body
-        //- navBar
-        include ../partials/navBar
+        //- header
+        include ../partials/header
+        //- nav
+        include ../partials/nav
         //- main
         main.main
             block content 

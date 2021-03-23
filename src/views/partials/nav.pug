@@ -1,27 +1,11 @@
-//- Nav Header
-nav.nav-header
-    div.nav-header__col
-        i.fas.fa-bars#jsBars
-    div.nav-header__col
-        div.logo
-            a.logo__link(href=routes.home)
-                img.logo__image.logo__image--nav(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/logo-box-market.png")
-    div.nav-header__col
-        i.fas.fa-search#jsHeaderSearch
-div.search#jsSearch
-    form.search__form(action="#", method="get")
-            input(type='text', placeholder="검색", name="term")
-    div.search__icon    
-        i.fas.fa-times#jsSearchTimes
-//- Nav Side Bar
-nav.nav-sidebar#jsSidebar
-    div.nav-sidebar__col
-            i.fas.fa-times#jsSidebarTimes
-    div.nav-sidebar__col
+nav.nav#jsNav
+    div.nav__col
+            i.fas.fa-times#jsNavTimes
+    div.nav__col
         div.logo
             a.logo__link(href=routes.home)
                 img.logo__image(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/logo-box-market.png")
-    div.nav-sidebar__col
+    div.nav__col
         div.enter    
             a.enter__login-link(href=routes.login)
                 i.fas.fa-sign-in-alt
@@ -29,7 +13,7 @@ nav.nav-sidebar#jsSidebar
             a.enter__join-link(href=routes.join) 
                 i.fas.fa-user-plus
                 span 회원가입
-    div.nav-sidebar__col
+    div.nav__col
         ul.list-area
             li 
                 a(href="#") 서울

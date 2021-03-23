@@ -1,0 +1,49 @@
+.header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  z-index: 97;
+  background-color: white;
+  box-shadow: 1px 0px 3px black;
+  transition: all 0.5s ease-in-out;
+  &__col:first-of-type {
+    width: 20%;
+    i {
+      position: relative;
+      left: 20px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.1s linear;
+    }
+    i:hover {
+      transform: scale(1.3);
+    }
+  }
+  &__col:nth-of-type(2) {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+  }
+  &__col:last-of-type {
+    width: 20%;
+    display: flex;
+    justify-content: flex-end;
+    i {
+      position: relative;
+      right: 30px;
+      font-size: 22px;
+      cursor: pointer;
+      transition: transform 0.1s linear;
+    }
+    i:hover {
+      transform: scale(1.3);
+    }
+  }
+}
+@media all and (min-width: 1023px) {
+  .header {
+    transform: translateY(-65px);
+  }
+}

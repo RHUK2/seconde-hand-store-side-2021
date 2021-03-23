@@ -4,17 +4,16 @@
 @import './config/reset.scss';
 @import './config/variable.scss';
 @import './config/common.scss';
-// Layout
-@import './layout.scss';
+// Partials
+@import './partials/header.scss';
+@import './partials/nav.scss';
+@import './partials/main.scss';
+@import './partials/footer.scss';
+// Blocks
+@import './blocks/enter.scss';
+@import './blocks/logo.scss';
+@import './blocks/listArea.scss';
+@import './blocks/search.scss';
 // Pages
 @import './pages/join.scss';
 @import './pages/login.scss';
-// blocks
-@import './blocks/enter.scss';
-@import './blocks/footer.scss';
-@import './blocks/logo.scss';
-@import './blocks/navBar.scss';
-@import './blocks/listArea.scss';
-@import './blocks/search.scss';
-
-@import './config/load.scss';

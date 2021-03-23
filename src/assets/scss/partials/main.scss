@@ -1,0 +1,19 @@
+.main {
+  width: 100%;
+  height: 80vh;
+  min-height: 900px;
+  padding-top: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 20px;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+}
+@media all and (min-width: 1023px) {
+  .main {
+    padding: 20px;
+    margin-left: 320px;
+    width: calc(100% - 320px);
+  }
+}
