@@ -1,0 +1,23 @@
+.social-login {
+  display: flex;
+  width: 300px;
+  justify-content: center;
+  margin-top: 40px;
+  &__col:not(:last-of-type) {
+    margin-right: 20px;
+  }
+  &__naver,
+  &__kakao,
+  &__google {
+    width: 50px;
+    height: auto;
+    cursor: pointer;
+  }
+}
+@media all and (min-width: 1023px) {
+  .social-login {
+    &__col:not(:last-of-type) {
+      margin-right: 30px;
+    }
+  }
+}

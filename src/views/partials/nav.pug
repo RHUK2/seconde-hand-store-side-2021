@@ -6,13 +6,24 @@ nav.nav#jsNav
             a.logo__link(href=routes.home)
                 img.logo__image(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/logo-box-market.png")
     div.nav__col
-        div.enter    
-            a.enter__login-link(href=routes.login)
-                i.fas.fa-sign-in-alt
-                span 로그인
-            a.enter__join-link(href=routes.join) 
-                i.fas.fa-user-plus
-                span 회원가입
+        div.enter
+            if !loggedUser    
+                a.enter__login-link(href=routes.login)
+                    i.fas.fa-sign-in-alt
+                    span 로그인
+                a.enter__join-link(href=routes.join) 
+                    i.fas.fa-user-plus
+                    span 회원가입
+            else 
+                img.enter__avatar#jsEnterAvatar(src="#")
+                ul.enter__list-user#jsEnterListUser
+                    li
+                        a(href="#") 프로필
+                    li
+                        a(href="#") 프로필 수정
+                    li
+                        a(href=routes.logout) 로그아웃
+
     div.nav__col
         ul.list-area
             li 

@@ -1,3 +1,4 @@
+const body = document.querySelector('body');
 // Header
 const headerBars = document.getElementById('jsHeaderBars');
 const headerSearch = document.getElementById('jsHeaderSearch');
@@ -9,6 +10,9 @@ const blank = document.getElementById('jsBlank');
 // Search
 const search = document.getElementById('jsSearch');
 const searchTimes = document.getElementById('jsSearchTimes');
+
+const enterAvatar = document.getElementById('jsEnterAvatar');
+const enterListUser = document.getElementById('jsEnterListUser');
 
 const openNav = () => {
   nav.classList.add('show-nav');
@@ -35,6 +39,23 @@ const handleResize = () => {
   }
 };
 
+const toggleListUser = () => {
+  enterListUser.classList.toggle('show-list-user');
+};
+
+const handleBody = event => {
+  if (event.target !== enterAvatar) {
+    const arrs = enterListUser.className.split(' ');
+    console.log(arrs);
+    arrs.forEach(arr => {
+      if (arr === 'show-list-user') {
+        console.log(arr);
+        enterListUser.classList.remove('show-list-user');
+      }
+    });
+  }
+};
+
 const init = () => {
   headerBars.addEventListener('click', openNav);
   navTimes.addEventListener('click', closeNav);
@@ -44,6 +65,9 @@ const init = () => {
   mainSearch.addEventListener('click', openSearch);
   searchTimes.addEventListener('click', closeSearch);
 
+  if (enterAvatar) enterAvatar.addEventListener('click', toggleListUser);
+
+  body.addEventListener('click', handleBody);
   window.addEventListener('resize', handleResize);
 };
 

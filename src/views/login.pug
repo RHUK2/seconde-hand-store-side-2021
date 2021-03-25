@@ -5,8 +5,9 @@ block content
         div.logo
             a.logo__link(href=routes.home)
                 img.logo__image(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/logo-box-market.png")
-        form.login__form
+        form.login__form(action=routes.login, method="post")
                 input(type="email", placeholder="아이디(이메일)", name="email",required=true)
                 input(type="password", placeholder="비밀번호", name="password",     required=true)
                 input(type="submit", value="로그인")
         a.login__join-link(href=routes.join) 회원가입
+        include ./partials/socialLogin
