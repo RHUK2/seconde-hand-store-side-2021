@@ -1,0 +1,45 @@
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__info {
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 1px 1px 3px black;
+    width: 60%;
+    min-width: 360px;
+    max-width: 450px;
+    border-radius: 20px;
+    padding: 20px;
+  }
+  &__avatar {
+    width: 120px;
+    height: auto;
+  }
+  &__text {
+    display: flex;
+    flex-direction: column;
+    h6 {
+      font-size: 13px;
+      margin-bottom: 5px;
+    }
+    span {
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+    a {
+      margin-top: 15px;
+      background-color: $yellow;
+      font-weight: 700;
+      border-radius: 20px;
+      width: 120px;
+      text-align: center;
+      padding: 10px;
+    }
+  }
+  .line {
+    border-bottom: 1px solid black;
+    width: 100%;
+    margin-top: 35px;
+  }
+}

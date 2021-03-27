@@ -8,7 +8,7 @@ block content
         span 회원정보를 입력해주세요.
         form.join__form(action=routes.join, method="post")
             input(type="email", placeholder="아이디(이메일)", name="email", required=true)
-            input(type="password", placeholder="비밀번호", name="password", required=true)
+            input(type="password", placeholder="비밀번호", name="password", minlength="4", required=true)
             input(type="password", placeholder="비밀번호 확인",name="passwordCheck", required=true)
             input(type="text", placeholder="닉네임", name="nickname", required=true)
             span * 닉네임은 추후 변경이 가능합니다.

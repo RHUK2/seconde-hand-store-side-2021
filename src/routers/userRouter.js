@@ -8,8 +8,8 @@ import routes from '../routes';
 
 const userRouter = express.Router();
 
-userRouter.get(routes.userProfile, getUserProfile);
-userRouter.get(routes.userEdit, getUserEdit);
-userRouter.get(routes.userDelete, getUserDelete);
+userRouter.get(routes.userProfile(), getUserProfile);
+userRouter.get(routes.userEdit(), getUserEdit);
+userRouter.get(routes.userDelete(), getUserDelete);
 
 export default userRouter;

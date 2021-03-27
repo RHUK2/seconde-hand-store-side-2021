@@ -44,6 +44,7 @@ const toggleListUser = () => {
 };
 
 const handleBody = event => {
+  if (!enterAvatar) return;
   if (event.target !== enterAvatar) {
     const arrs = enterListUser.className.split(' ');
     console.log(arrs);

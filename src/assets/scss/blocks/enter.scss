@@ -1,5 +1,6 @@
 .enter {
   display: flex;
+  position: relative;
   &__login-link {
     display: block;
     margin-right: 30px;
@@ -29,16 +30,14 @@
     color: $red;
   }
   &__avatar {
-    border: 1px solid black;
-    border-radius: 50%;
     width: 50px;
-    height: 50px;
+    height: auto;
     cursor: pointer;
   }
   &__list-user {
     position: absolute;
-    top: 160px;
-    left: 180px;
+    top: 25px;
+    left: 55px;
     background-color: white;
     border-radius: 10px;
     border-top-left-radius: 0px;

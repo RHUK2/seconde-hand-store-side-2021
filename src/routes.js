@@ -13,6 +13,13 @@ const BOARD = '/board';
 const BOARD_DETAIL = '/:id/detail';
 const BOARD_EDIT = '/:id/edit';
 const BOARD_DELETE = '/:id/delete';
+// Social Login Router
+const NAVER = '/auth/naver';
+const NAVER_CALLBACK = '/auth/naver/callback';
+const KAKAO = '/auth/kakao';
+const KAKAO_CALLBACK = '/auth/kakao/callback';
+const GOOGLE = '/auth/google';
+const GOOGLE_CALLBACK = '/auth/google/callback';
 // Routes Object
 const routes = {
   home: HOME,
@@ -20,13 +27,28 @@ const routes = {
   login: LOGIN,
   logout: LOGOUT,
   user: USER,
-  userProfile: USER_PROFILE,
-  userEdit: USER_EDIT,
-  userDelete: USER_DELETE,
+  userProfile: id => {
+    if (id) return `/user/${id}/profile`;
+    return USER_PROFILE;
+  },
+  userEdit: id => {
+    if (id) return `/user/${id}/edit`;
+    return USER_EDIT;
+  },
+  userDelete: id => {
+    if (id) return `/user/${id}/delete`;
+    return USER_DELETE;
+  },
   board: BOARD,
   boardDetail: BOARD_DETAIL,
   boardEdit: BOARD_EDIT,
-  boardDelete: BOARD_DELETE
+  boardDelete: BOARD_DELETE,
+  naver: NAVER,
+  naverCallback: NAVER_CALLBACK,
+  kakao: KAKAO,
+  kakaoCallback: KAKAO_CALLBACK,
+  google: GOOGLE,
+  googleCallback: GOOGLE_CALLBACK
 };
 
 export default routes;

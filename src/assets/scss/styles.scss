@@ -10,6 +10,7 @@
 @import './partials/main.scss';
 @import './partials/footer.scss';
 @import './partials/socialLogin.scss';
+@import './partials/flashMessage.scss';
 // Blocks
 @import './blocks/enter.scss';
 @import './blocks/logo.scss';
@@ -18,3 +19,4 @@
 // Pages
 @import './pages/join.scss';
 @import './pages/login.scss';
+@import './pages/userProfile.scss';

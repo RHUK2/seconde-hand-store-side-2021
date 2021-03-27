@@ -15,12 +15,12 @@ nav.nav#jsNav
                     i.fas.fa-user-plus
                     span 회원가입
             else 
-                img.enter__avatar#jsEnterAvatar(src="#")
+                img.enter__avatar#jsEnterAvatar(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/user.png")
                 ul.enter__list-user#jsEnterListUser
                     li
-                        a(href="#") 프로필
+                        a(href=routes.userProfile(loggedUser.nickname)) 프로필
                     li
-                        a(href="#") 프로필 수정
+                        a(href=routes.userEdit(loggedUser.nickname)) 프로필 수정
                     li
                         a(href=routes.logout) 로그아웃
 
