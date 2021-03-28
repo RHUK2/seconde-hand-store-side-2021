@@ -21,6 +21,7 @@ globalRouter.post(routes.join, postJoin, postLogin);
 
 globalRouter.get(routes.login, getLogin);
 globalRouter.post(routes.login, postLogin);
+
 globalRouter.get(routes.logout, getLogout);
 
 globalRouter.get(routes.naver, naverLogin);

@@ -17,25 +17,32 @@ export const postJoin = async (req, res, next) => {
     req.flash('error', '비밀번호가 다릅니다.');
     res.redirect(routes.join);
     res.status(400);
-    return -1;
   }
   try {
-    const user = await User.findOne({ nickname });
-    if (user) {
-      req.flash('error', '중복된 별명입니다.');
+    const emailUser = await User.findOne({ email });
+    const nicknameUser = await User.findOne({ nickname });
+    if (emailUser) {
+      req.flash('error', '이미 가입된 이메일입니다.');
+    }
+    if (nicknameUser) {
+      req.flash('error', '중복된 닉네임입니다.');
+    }
+    if (!emailUser && !nicknameUser) {
+      const newUser = new User({
+        email,
+        nickname,
+        avatarUrl:
+          'https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/user.png'
+      });
+      await User.register(newUser, password);
+    } else {
       res.redirect(routes.join);
       res.status(400);
-      return -1;
     }
-    const newUser = new User({
-      email,
-      nickname
-    });
-    await User.register(newUser, password);
     next();
   } catch (error) {
-    req.flash('error', '이미 가입된 이메일입니다.');
     console.log(error);
+    req.flash('error', '이미 가입된 이메일입니다.');
     res.redirect(routes.join);
     res.status(400);
   }
@@ -61,9 +68,8 @@ export const naverLogin = passport.authenticate('naver', {
   failureFlash: '로그인 실패.'
 });
 export const naverLoginCallback = async (_, __, profile, done) => {
-  console.log(profile);
   const {
-    _json: { id, email, nickname }
+    _json: { id, email }
   } = profile;
   try {
     const user = await User.findOne({ email });
@@ -74,7 +80,9 @@ export const naverLoginCallback = async (_, __, profile, done) => {
     }
     const newUser = await User.create({
       email,
-      nickname
+      nickname: `Box${new Date().getTime()}`,
+      avatarUrl:
+        'https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/user.png'
     });
     return done(null, newUser);
   } catch (error) {
@@ -90,7 +98,6 @@ export const kakaoLoginCallback = async (_, __, profile, done) => {
   const {
     _json: {
       id,
-      properties: { nickname },
       kakao_account: { email }
     }
   } = profile;
@@ -103,7 +110,9 @@ export const kakaoLoginCallback = async (_, __, profile, done) => {
     }
     const newUser = await User.create({
       email,
-      nickname
+      nickname: `Box${new Date().getTime()}`,
+      avatarUrl:
+        'https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/user.png'
     });
     return done(null, newUser);
   } catch (error) {
@@ -116,7 +125,7 @@ export const googleLogin = passport.authenticate('google', {
   failureFlash: '로그인 실패.'
 });
 export const googleLoginCallback = async (_, __, profile, done) => {
-  const { id, email, displayName: nickname } = profile;
+  const { id, email } = profile;
   try {
     const user = await User.findOne({ email });
     if (user) {
@@ -126,7 +135,9 @@ export const googleLoginCallback = async (_, __, profile, done) => {
     }
     const newUser = await User.create({
       email,
-      nickname
+      nickname: `Box${new Date().getTime()}`,
+      avatarUrl:
+        'https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/user.png'
     });
     return done(null, newUser);
   } catch (error) {

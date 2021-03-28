@@ -13,6 +13,11 @@
       width: 300px;
       padding: 20px;
       font-size: 17px;
+      outline: none;
+      transition: border 0.2s ease-in-out;
+    }
+    input:focus {
+      border: 3px solid $yellow;
     }
     input[type='submit'] {
       background-color: $red;

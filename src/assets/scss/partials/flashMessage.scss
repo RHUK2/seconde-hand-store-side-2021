@@ -1,6 +1,6 @@
 @keyframes rightToLeft {
   0% {
-    transform: translateX(300px);
+    transform: translateX(500px);
   }
   20% {
     transform: translateX(0px);
@@ -9,7 +9,7 @@
     transform: translateX(0px);
   }
   100% {
-    transform: translateX(300px);
+    transform: translateX(500px);
   }
 }
 .flash-message {

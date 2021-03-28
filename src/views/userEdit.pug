@@ -1,7 +1,11 @@
 extends layouts/main
 
 block content 
-    div.edit-profile
-        form.edit-profile__form
-            //- input(type="")
-            //- input(type="text", placeholder="수정할 닉네임")
+    div.user-edit
+        form.user-edit__form(action=routes.userEdit(user._id), method="post", enctype="multipart/form-data")
+            img.user-edit__preview(src=user.avatarUrl)
+            div.user-edit__upload
+                label(for="avatar-upload") 사진 선택
+                input(type="file", id="avatar-upload" name="avatar", accept="image/*")
+            input(type="text", name="nickname", placeholder="수정할 닉네임")
+            input(type="submit", value="저장")

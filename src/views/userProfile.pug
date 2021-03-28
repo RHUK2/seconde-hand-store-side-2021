@@ -1,13 +1,14 @@
 extends layouts/main
 
 block content
-    div.profile
-        div.profile__info
-            img.profile__avatar(src="https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/user.png")
-            div.profile__text
+    div.user-profile
+        div.user-profile__info
+            img.user-profile__avatar(src=user.avatarUrl)
+            div.user-profile__text
                 h6 닉네임:
-                span=loggedUser.nickname
+                span=user.nickname
                 h6 아이디(이메일):
-                span=loggedUser.email
-                a(href=routes.userEdit(loggedUser.nickname)) 프로필 수정
+                span=user.email
+                if user._id.toString() === loggedUser._id.toString()
+                    a(href=routes.userEdit(user._id)) 프로필 수정
         div.line

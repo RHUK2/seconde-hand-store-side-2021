@@ -10,7 +10,7 @@ const blank = document.getElementById('jsBlank');
 // Search
 const search = document.getElementById('jsSearch');
 const searchTimes = document.getElementById('jsSearchTimes');
-
+// Enter
 const enterAvatar = document.getElementById('jsEnterAvatar');
 const enterListUser = document.getElementById('jsEnterListUser');
 

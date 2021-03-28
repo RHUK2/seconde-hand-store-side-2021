@@ -1,27 +1,31 @@
-.profile {
+.user-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
   &__info {
     display: flex;
     justify-content: space-around;
+    align-items: center;
     box-shadow: 1px 1px 3px black;
     width: 60%;
     min-width: 360px;
-    max-width: 450px;
+    max-width: 600px;
     border-radius: 20px;
     padding: 20px;
   }
   &__avatar {
-    width: 120px;
-    height: auto;
+    width: auto;
+    height: 100px;
+    margin-right: 10px;
   }
   &__text {
     display: flex;
     flex-direction: column;
+    width: 200px;
     h6 {
       font-size: 13px;
       margin-bottom: 5px;
+      color: $darkgray;
     }
     span {
       margin-bottom: 15px;
@@ -34,12 +38,19 @@
       border-radius: 20px;
       width: 120px;
       text-align: center;
-      padding: 10px;
+      padding: 15px;
     }
   }
   .line {
     border-bottom: 1px solid black;
     width: 100%;
     margin-top: 35px;
+  }
+}
+@media all and (min-width: 1023px) {
+  .user-profile {
+    &__avatar {
+      height: 150px;
+    }
   }
 }
