@@ -1,16 +1,43 @@
 .user-edit {
   display: flex;
   justify-content: center;
+  &__preview {
+    width: 200px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 1px 1px 3px black;
+  }
   &__form {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   &__upload {
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    label {
+      width: 100px;
+      height: 44px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $blue;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    input {
+      opacity: 0;
+      position: relative;
+      top: -44px;
+      width: 100px;
+    }
   }
   input[type='text'] {
-    margin-top: 40px;
+    margin-top: 10px;
     padding: 10px;
     font-size: 18px;
     outline: none;
@@ -24,7 +51,7 @@
     margin-top: 40px;
     border: none;
     border-radius: 20px;
-    font-size: 18px;
+    font-size: 17px;
     padding: 10px;
     color: white;
     background-color: $blue;

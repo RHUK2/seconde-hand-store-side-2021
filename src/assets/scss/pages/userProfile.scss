@@ -17,6 +17,8 @@
     width: auto;
     height: 100px;
     margin-right: 10px;
+    box-shadow: 1px 1px 3px black;
+    border-radius: 50%;
   }
   &__text {
     display: flex;

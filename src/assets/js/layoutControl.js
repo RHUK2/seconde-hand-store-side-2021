@@ -47,7 +47,6 @@ const handleBody = event => {
   if (!enterAvatar) return;
   if (event.target !== enterAvatar) {
     const arrs = enterListUser.className.split(' ');
-    console.log(arrs);
     arrs.forEach(arr => {
       if (arr === 'show-list-user') {
         console.log(arr);
@@ -66,9 +65,11 @@ const init = () => {
   mainSearch.addEventListener('click', openSearch);
   searchTimes.addEventListener('click', closeSearch);
 
-  if (enterAvatar) enterAvatar.addEventListener('click', toggleListUser);
+  if (enterAvatar) {
+    enterAvatar.addEventListener('click', toggleListUser);
+    body.addEventListener('click', handleBody);
+  }
 
-  body.addEventListener('click', handleBody);
   window.addEventListener('resize', handleResize);
 };
 
