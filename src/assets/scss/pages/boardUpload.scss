@@ -1,0 +1,70 @@
+.board-upload {
+  display: flex;
+  flex-direction: column;
+  &__preview {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    img {
+      background-color: $fake-white;
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+    }
+  }
+  &__upload {
+    label {
+      width: 100px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $blue;
+      color: white;
+      border-radius: 20px;
+      cursor: pointer;
+      z-index: 1;
+    }
+    input {
+      opacity: 0;
+      position: relative;
+      top: -44px;
+      width: 100px;
+    }
+  }
+  &__title,
+  &__cost {
+    border: none;
+    outline: none;
+    border-bottom: 1px solid black;
+    margin-bottom: 20px;
+    padding: 10px;
+    transition: border-bottom 0.1s linear;
+    font-size: 18px;
+  }
+  &__title:focus,
+  &__cost:focus {
+    border-bottom: 3px solid $blue;
+  }
+  &__description {
+    height: 300px;
+    margin-bottom: 20px;
+    resize: none;
+    padding: 10px;
+    font-size: 18px;
+  }
+  &__submit {
+    background-color: $blue;
+    border-radius: 20px;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+  }
+}
+@media all and (min-width: 1023px) {
+  .board-upload {
+  }
+}

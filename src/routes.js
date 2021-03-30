@@ -10,6 +10,7 @@ const USER_EDIT = '/:id/edit';
 const USER_DELETE = '/:id/delete';
 // Board Router
 const BOARD = '/board';
+const BOARD_UPLOAD = '/upload';
 const BOARD_DETAIL = '/:id/detail';
 const BOARD_EDIT = '/:id/edit';
 const BOARD_DELETE = '/:id/delete';
@@ -40,9 +41,19 @@ const routes = {
     return USER_DELETE;
   },
   board: BOARD,
-  boardDetail: BOARD_DETAIL,
-  boardEdit: BOARD_EDIT,
-  boardDelete: BOARD_DELETE,
+  boardUpload: BOARD_UPLOAD,
+  boardDetail: id => {
+    if (id) return `/board/${id}/detail`;
+    return BOARD_DETAIL;
+  },
+  boardEdit: id => {
+    if (id) return `/board/${id}/edit`;
+    return BOARD_EDIT;
+  },
+  boardDelete: id => {
+    if (id) return `/board/${id}/delete`;
+    return BOARD_DELETE;
+  },
   naver: NAVER,
   naverCallback: NAVER_CALLBACK,
   kakao: KAKAO,

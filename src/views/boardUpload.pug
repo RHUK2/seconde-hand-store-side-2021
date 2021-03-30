@@ -1,0 +1,16 @@
+extends layouts/main
+
+block content 
+        form.board-upload#jsBoardUpload(action=`/board${routes.boardUpload}`, method="post", enctype="multipart/form-data")
+            div.board-upload__preview#jsBoardUploadPreview
+                img(src=null)
+                img(src=null)
+                img(src=null)
+                img(src=null)
+            div.board-upload__upload
+                label(for="photo-upload") 사진 선택
+                input(type="file", id="photo-upload", name="photo", accept="image/*", multiple, required=true)
+            input.board-upload__title(type="text", name="title", placeholder="제목" required=true)
+            input.board-upload__cost(type="number", name="cost", placeholder="가격" required=true)
+            textarea.board-upload__description(name="description", placeholder="제품 정보를 작성해주세요.", required=true)
+            input.board-upload__submit(type="submit", value="업로드")

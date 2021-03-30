@@ -8,7 +8,11 @@ const UserSchema = new mongoose.Schema({
   avatarKey: String,
   naverId: Number,
   kakaoId: Number,
-  googleId: Number
+  googleId: Number,
+  boards: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: 'Board'
+  }
 });
 
 UserSchema.plugin(passportLocalMongoose, { usernameField: 'email' });

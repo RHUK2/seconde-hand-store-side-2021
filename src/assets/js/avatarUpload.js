@@ -2,7 +2,7 @@ const userEdit = document.getElementById('jsUserEdit');
 const avatarUpload = document.getElementById('avatar-upload');
 const userEditPreview = document.getElementById('jsUserEditPreview');
 
-const handleChange = event => {
+const changeAvatar = event => {
   userEditPreview.setAttribute(
     'src',
     URL.createObjectURL(event.target.files[0])
@@ -10,7 +10,7 @@ const handleChange = event => {
 };
 
 const init = () => {
-  avatarUpload.addEventListener('change', handleChange);
+  avatarUpload.addEventListener('change', changeAvatar);
 };
 
 if (userEdit) {

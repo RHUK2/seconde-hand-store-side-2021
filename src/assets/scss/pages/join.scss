@@ -19,7 +19,7 @@
       padding: 20px;
       font-size: 17px;
       outline: none;
-      transition: border 0.2s ease-in-out;
+      transition: border 0.2s linear;
     }
     input:focus {
       border: 3px solid $yellow;
