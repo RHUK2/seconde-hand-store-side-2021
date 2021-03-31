@@ -12,5 +12,12 @@ block content
                 input(type="file", id="photo-upload", name="photo", accept="image/*", multiple, required=true)
             input.board-upload__title(type="text", name="title", placeholder="제목" required=true)
             input.board-upload__cost(type="number", name="cost", placeholder="가격" required=true)
+            div.board-upload__select
+                label(for="area-select") 지역 선택:
+                select(name="areas", id="area-select" required=true)
+                    option(value="") -----------
+                    each area in areas
+                        option(value=area)=area
+            div.board-upload__map#jsUploadMap
             textarea.board-upload__description(name="description", placeholder="제품 정보를 작성해주세요.", required=true)
             input.board-upload__submit(type="submit", value="업로드")

@@ -6,33 +6,51 @@ export const getBoardUpload = (req, res) => {
 };
 export const postBoardUpload = async (req, res) => {
   const {
-    body: { title, cost, description },
+    body: { title, cost, description, areas },
     files
   } = req;
+  console.log(req.body);
   try {
     const newBoard = await Board.create({
       title,
       cost,
       description,
+      areas,
       creator: req.user._id
     });
     files.forEach(file => {
       newBoard.imageUrls.push(file.location);
     });
     await newBoard.save();
-    res.redirect(routes.boardDetail(req.user._id));
+    res.redirect(routes.boardDetail(newBoard._id));
   } catch (error) {
     console.log(error);
     res.redirect(`/board${routes.boardUpload}`);
     res.status(400);
   }
 };
-export const getBoardDetail = (req, res) => {
-  res.render('boardDetail', { pageTitle: '포스트' });
+export const getBoardDetail = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const board = await Board.findOne({ _id: id }).populate('creator');
+    res.render('boardDetail', { pageTitle: '포스트', board });
+  } catch (error) {
+    console.log(error);
+    res.redirect(routes.home);
+  }
 };
 export const getBoardEdit = (req, res) => {
   res.render('boardEdit', { pageTitle: '포스트 수정' });
 };
 export const getBoardDelete = (req, res) => {
   res.render('home');
+};
+
+export const getBoardArea = (req, res) => {
+  const {
+    params: { area }
+  } = req;
+  res.render('boardArea', { pageTitle: area });
 };

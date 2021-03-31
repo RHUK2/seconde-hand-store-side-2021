@@ -1,5 +1,6 @@
 import express from 'express';
 import {
+  getBoardArea,
   getBoardDelete,
   getBoardDetail,
   getBoardEdit,
@@ -17,5 +18,7 @@ boardRouter.post(routes.boardUpload, uploadPhoto, postBoardUpload);
 boardRouter.get(routes.boardDetail(), getBoardDetail);
 boardRouter.get(routes.boardEdit(), onlyPrivate, getBoardEdit);
 boardRouter.get(routes.boardDelete(), onlyPrivate, getBoardDelete);
+
+boardRouter.get(routes.boardArea(), getBoardArea);
 
 export default boardRouter;

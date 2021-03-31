@@ -15,6 +15,10 @@ const BoardSchema = new mongoose.Schema({
     type: Number,
     required: 'Cost is required'
   },
+  areas: {
+    type: String,
+    required: 'Area is required'
+  },
   description: String,
   createdAt: {
     type: Date,

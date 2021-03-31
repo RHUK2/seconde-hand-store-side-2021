@@ -14,6 +14,7 @@ const BOARD_UPLOAD = '/upload';
 const BOARD_DETAIL = '/:id/detail';
 const BOARD_EDIT = '/:id/edit';
 const BOARD_DELETE = '/:id/delete';
+const BOARD_AREA = '/:area';
 // Social Login Router
 const NAVER = '/auth/naver';
 const NAVER_CALLBACK = '/auth/naver/callback';
@@ -53,6 +54,10 @@ const routes = {
   boardDelete: id => {
     if (id) return `/board/${id}/delete`;
     return BOARD_DELETE;
+  },
+  boardArea: area => {
+    if (area) return `/board/${area}`;
+    return BOARD_AREA;
   },
   naver: NAVER,
   naverCallback: NAVER_CALLBACK,

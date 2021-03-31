@@ -3,18 +3,25 @@ extends layouts/main
 block content 
     div.board-detail
         div.user-info
-            img.user-info__avatar(src='#')
+            img.user-info__avatar(src=board.creator.avatarUrl)
             div.user-info__text
-                span Name 
-                span Area
-        img.board-detail__image(src='#')
+                span=board.creator.nickname
+                span=board.areas
+        div.slide#jsSlide                
+            img.slide__image(src=board.imageUrls[0])
+            img.slide__image(src=board.imageUrls[1])
+            img.slide__image(src=board.imageUrls[2])
+            img.slide__image(src=board.imageUrls[3])
+            div.slide__arrow
+                i.fas.fa-chevron-left#jsArrowLeft
+                i.fas.fa-chevron-right#jsArrowRight
         div.board-info
             div.board-info__title
-                h3 Title 
-                h3 Money
+                h3=board.title 
+                h3=board.cost
                 h3 Location
-            div.board-info__map 지도
-        p.board-detail__text Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus unde molestiae quis sunt quaerat reiciendis ut consequuntur non et, tempora eius minus error beatae omnis nihil, quo natus repudiandae molestias.
-        span.board-detail__views Views
+            div.board-info__map#jsDetailMap
+        p.board-detail__text=board.description 
+        span.board-detail__views 조회 #{board.views}
         
 

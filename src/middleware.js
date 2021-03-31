@@ -32,6 +32,25 @@ export const localMiddleware = (req, res, next) => {
   res.locals.routes = routes;
   res.locals.webTitle = '박스마켓';
   res.locals.loggedUser = req.user || null;
+  res.locals.areas = [
+    '서울',
+    '부산',
+    '대구',
+    '인천',
+    '광주',
+    '대전',
+    '울산',
+    '세종',
+    '경기도',
+    '강원도',
+    '충청북도',
+    '충청남도',
+    '전라북도',
+    '전라남도',
+    '경상북도',
+    '경상남도',
+    '제주도'
+  ];
   next();
 };
 
