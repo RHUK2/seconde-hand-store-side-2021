@@ -6,16 +6,16 @@ export const getBoardUpload = (req, res) => {
 };
 export const postBoardUpload = async (req, res) => {
   const {
-    body: { title, cost, description, areas },
+    body: { title, cost, description, areas, address },
     files
   } = req;
-  console.log(req.body);
   try {
     const newBoard = await Board.create({
       title,
       cost,
       description,
       areas,
+      address,
       creator: req.user._id
     });
     files.forEach(file => {

@@ -19,7 +19,14 @@ const BoardSchema = new mongoose.Schema({
     type: String,
     required: 'Area is required'
   },
-  description: String,
+  address: {
+    type: String,
+    required: 'Address is required'
+  },
+  description: {
+    type: String,
+    required: 'Description is required'
+  },
   createdAt: {
     type: Date,
     default: Date.now

@@ -18,6 +18,13 @@ block content
                     option(value="") -----------
                     each area in areas
                         option(value=area)=area
+            div.board-upload__search
+                p 동네 이름을 검색 후(ex. 구로구, 영등포구) 만남을 가질 장소를 클릭해주세요.
+                input(hidden="hidden")
+                input#jsSearchArea(type="text", placeholder="동네 검색")
+            div.board-upload__map-data
+                h4 직거래 장소:
+                input#jsUploadMapData(type="text", placeholder="만나실 장소를 클릭해주세요.(필수)", name="address" required=true, autocomplete="off")
             div.board-upload__map#jsUploadMap
             textarea.board-upload__description(name="description", placeholder="제품 정보를 작성해주세요.", required=true)
             input.board-upload__submit(type="submit", value="업로드")

@@ -4,4 +4,5 @@ import './layoutControl';
 import './avatarUpload';
 import './photoUpload';
 import './slide';
-import './map';
+import './uploadMap';
+import './detailMap';

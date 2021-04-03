@@ -41,7 +41,6 @@ export const postUserEdit = async (req, res) => {
       return -1;
     }
     if (file) {
-      console.log('delete');
       s3.deleteObject(
         {
           Bucket: 'shstore-side-project',

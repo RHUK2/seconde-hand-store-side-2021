@@ -49,7 +49,6 @@ const handleBody = event => {
     const arrs = enterListUser.className.split(' ');
     arrs.forEach(arr => {
       if (arr === 'show-list-user') {
-        console.log(arr);
         enterListUser.classList.remove('show-list-user');
       }
     });
