@@ -3,10 +3,10 @@ extends layouts/main
 block content 
         form.board-upload#jsBoardUpload(action=`/board${routes.boardUpload}`, method="post", enctype="multipart/form-data")
             div.board-upload__preview#jsBoardUploadPreview
-                img(src=null)
-                img(src=null)
-                img(src=null)
-                img(src=null)
+                img(src='https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/white-image.png')
+                img(src='https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/white-image.png')
+                img(src='https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/white-image.png')
+                img(src='https://shstore-side-project.s3.ap-northeast-2.amazonaws.com/assets/white-image.png')
             div.board-upload__upload
                 label(for="photo-upload") 사진 선택
                 input(type="file", id="photo-upload", name="photo", accept="image/*", multiple, required=true)
@@ -25,6 +25,8 @@ block content
             div.board-upload__map-data
                 h4 직거래 장소:
                 input#jsUploadMapData(type="text", placeholder="만나실 장소를 클릭해주세요.(필수)", name="address" required=true, autocomplete="off")
+                input#jsUploadMapCoords(type="hidden", name="coords")
             div.board-upload__map#jsUploadMap
             textarea.board-upload__description(name="description", placeholder="제품 정보를 작성해주세요.", required=true)
             input.board-upload__submit(type="submit", value="업로드")
+            

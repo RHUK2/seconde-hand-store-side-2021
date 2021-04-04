@@ -23,6 +23,10 @@ const BoardSchema = new mongoose.Schema({
     type: String,
     required: 'Address is required'
   },
+  coords: {
+    type: String,
+    required: 'Coords is required'
+  },
   description: {
     type: String,
     required: 'Description is required'

@@ -15,13 +15,13 @@ block content
             div.slide__arrow
                 i.fas.fa-chevron-left#jsArrowLeft
                 i.fas.fa-chevron-right#jsArrowRight
-        div.board-info
-            div.board-info__title
-                h3=board.title 
-                h3=board.cost
-                h3=board.address
-            div.board-info__map#jsDetailMap
+        div.board-detail__title
+            h3=board.title 
+            h3=board.cost
+            h3=board.address
+        div.board-detail__map#jsDetailMap
         p.board-detail__text=board.description 
         span.board-detail__views 조회 #{board.views}
+        
         
 

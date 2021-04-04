@@ -22,6 +22,9 @@ const KAKAO = '/auth/kakao';
 const KAKAO_CALLBACK = '/auth/kakao/callback';
 const GOOGLE = '/auth/google';
 const GOOGLE_CALLBACK = '/auth/google/callback';
+// API Router
+const API = '/api';
+const COORDS = '/:id/coords';
 // Routes Object
 const routes = {
   home: HOME,
@@ -64,7 +67,9 @@ const routes = {
   kakao: KAKAO,
   kakaoCallback: KAKAO_CALLBACK,
   google: GOOGLE,
-  googleCallback: GOOGLE_CALLBACK
+  googleCallback: GOOGLE_CALLBACK,
+  api: API,
+  coords: COORDS
 };
 
 export default routes;

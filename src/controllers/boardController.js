@@ -6,7 +6,7 @@ export const getBoardUpload = (req, res) => {
 };
 export const postBoardUpload = async (req, res) => {
   const {
-    body: { title, cost, description, areas, address },
+    body: { title, cost, description, areas, address, coords },
     files
   } = req;
   try {
@@ -16,6 +16,7 @@ export const postBoardUpload = async (req, res) => {
       description,
       areas,
       address,
+      coords,
       creator: req.user._id
     });
     files.forEach(file => {
@@ -53,4 +54,17 @@ export const getBoardArea = (req, res) => {
     params: { area }
   } = req;
   res.render('boardArea', { pageTitle: area });
+};
+
+export const getCoords = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const board = await Board.findOne({ _id: id });
+    const coords = JSON.parse(board.coords);
+    res.send(coords);
+  } catch (error) {
+    console.log(error);
+  }
 };

@@ -22,6 +22,7 @@ import {
   kakaoLoginCallback,
   naverLoginCallback
 } from './controllers/globalController';
+import apiRouter from './routers/apiRouter';
 
 const app = express();
 
@@ -100,5 +101,6 @@ app.use(localMiddleware);
 app.use(routes.home, globalRouter);
 app.use(routes.user, userRouter);
 app.use(routes.board, boardRouter);
+app.use(routes.api, apiRouter);
 
 export default app;
