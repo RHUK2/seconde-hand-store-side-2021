@@ -23,8 +23,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $blue;
-      color: white;
+      background-color: $yellow;
+      font-weight: 700;
       border-radius: 20px;
       cursor: pointer;
       z-index: 1;
@@ -44,7 +44,7 @@
     transition: border 0.2s linear;
   }
   input[type='text']:focus {
-    border: 3px solid $blue;
+    border: 3px solid $yellow;
   }
   input[type='submit'] {
     width: 200px;
@@ -53,8 +53,8 @@
     border-radius: 20px;
     font-size: 17px;
     padding: 10px;
-    color: white;
-    background-color: $blue;
+    background-color: $yellow;
+    font-weight: 700;
     outline: none;
     cursor: pointer;
   }

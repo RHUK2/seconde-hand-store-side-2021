@@ -1,9 +1,16 @@
 import passport from 'passport';
 import routes from '../routes';
 import User from '../models/User';
+import Board from '../models/Board';
 
-export const getHome = (req, res) => {
-  res.render('home', { pageTitle: '홈' });
+export const getHome = async (req, res) => {
+  try {
+    const boards = await Board.find({}).sort({ _id: -1 });
+    res.render('home', { pageTitle: '홈', boards });
+  } catch (error) {
+    console.log(error);
+    res.render('home', { pageTitle: '홈', boards: [] });
+  }
 };
 
 export const getJoin = (req, res) => {

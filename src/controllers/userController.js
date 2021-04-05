@@ -7,7 +7,8 @@ export const getUserProfile = async (req, res) => {
     params: { id }
   } = req;
   try {
-    const user = await User.findOne({ _id: id });
+    const user = await User.findOne({ _id: id }).populate('boards');
+    console.log(user);
     res.render('userProfile', { pageTitle: '프로필', user });
   } catch (error) {
     console.log(error);
@@ -67,6 +68,7 @@ export const postUserEdit = async (req, res) => {
     res.redirect(routes.home);
   }
 };
+// to do
 export const getUserDelete = (req, res) => {
   res.render('home');
 };

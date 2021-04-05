@@ -1,4 +1,6 @@
+import { s3 } from '../middleware';
 import Board from '../models/Board';
+import User from '../models/User';
 import routes from '../routes';
 
 export const getBoardUpload = (req, res) => {
@@ -23,6 +25,8 @@ export const postBoardUpload = async (req, res) => {
       newBoard.imageUrls.push(file.location);
     });
     await newBoard.save();
+    req.user.boards.push(newBoard._id);
+    await req.user.save();
     res.redirect(routes.boardDetail(newBoard._id));
   } catch (error) {
     console.log(error);
@@ -42,18 +46,89 @@ export const getBoardDetail = async (req, res) => {
     res.redirect(routes.home);
   }
 };
-export const getBoardEdit = (req, res) => {
-  res.render('boardEdit', { pageTitle: '포스트 수정' });
+export const getBoardEdit = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const board = await Board.findOne({ _id: id });
+    res.render('boardEdit', { pageTitle: '포스트 수정', board });
+  } catch (error) {
+    console.log(error);
+  }
 };
-export const getBoardDelete = (req, res) => {
-  res.render('home');
+export const postBoardEdit = async (req, res) => {
+  const {
+    params: { id },
+    body: { title, cost, description, areas, address, coords },
+    files
+  } = req;
+  try {
+    const board = await Board.findOneAndUpdate(
+      { _id: id },
+      {
+        title,
+        cost,
+        description,
+        areas,
+        address,
+        coords,
+        imageUrls: []
+      }
+    );
+    files.forEach(file => {
+      board.imageUrls.push(file.location);
+    });
+    await board.save();
+    res.redirect(routes.boardDetail(board._id));
+  } catch (error) {
+    console.log(error);
+  }
 };
 
-export const getBoardArea = (req, res) => {
+export const getBoardDelete = async (req, res) => {
+  const {
+    params: { id }
+  } = req;
+  try {
+    const board = await Board.findOne({ _id: id });
+    board.imageUrls.forEach(imageUrl => {
+      const key = imageUrl.split('/photos/')[1];
+      s3.deleteObject(
+        {
+          Bucket: 'shstore-side-project',
+          Key: `photos/${key}`
+        },
+        (err, data) => {
+          if (err) console.log(err, err.stack);
+          else console.log(data);
+        }
+      );
+    });
+    const user = await User.findOne({ _id: board.creator });
+    user.boards = user.boards.filter(elem => {
+      return elem.toString() !== id;
+    });
+    await user.save();
+    await board.remove();
+    res.redirect(routes.home);
+  } catch (error) {
+    console.log(error);
+    res.redirect(routes.home);
+  }
+};
+
+export const getBoardArea = async (req, res) => {
   const {
     params: { area }
   } = req;
-  res.render('boardArea', { pageTitle: area });
+  try {
+    const boards = await Board.find({ areas: area }).sort({ _id: -1 });
+    res.render('boardArea', { pageTitle: area, area, boards });
+  } catch (error) {
+    console.log(error);
+    res.render('boardArea', { pageTitle: area, area, boards: [] });
+  }
 };
 
 export const getCoords = async (req, res) => {

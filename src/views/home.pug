@@ -1,4 +1,10 @@
 extends layouts/main
+include mixins/boardBlock
 
 block content 
-    span Home
+    h.home-title 전체
+    div.home-board
+        each board in boards
+            +boardBlock(board)
+            +boardBlock(board)
+            +boardBlock(board)

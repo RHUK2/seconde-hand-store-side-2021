@@ -1,4 +1,5 @@
 extends layouts/main
+include mixins/boardBlock
 
 block content
     div.user-profile
@@ -9,6 +10,10 @@ block content
                 span=user.nickname
                 h6 아이디(이메일):
                 span=user.email
-                if user._id.toString() === loggedUser._id.toString()
-                    a(href=routes.userEdit(user._id)) 프로필 수정
+                if loggedUser
+                    if user._id.toString() === loggedUser._id.toString()
+                        a(href=routes.userEdit(user._id)) 프로필 수정
         div.line
+        div.home-board
+            each board in user.boards
+                +boardBlock(board)

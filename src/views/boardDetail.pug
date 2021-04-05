@@ -3,10 +3,16 @@ extends layouts/main
 block content 
     div.board-detail
         div.user-info
-            img.user-info__avatar(src=board.creator.avatarUrl)
-            div.user-info__text
-                span=board.creator.nickname
-                span=board.areas
+            a.user-info__link(href=routes.userProfile(board.creator._id))
+                img.user-info__avatar(src=board.creator.avatarUrl)
+                div.user-info__text
+                    span=board.creator.nickname
+                    span=board.areas
+            if loggedUser
+                    if board.creator._id.toString() === loggedUser._id.toString()                 
+                        div.user-info__link-box
+                            a(href=routes.boardEdit(board._id)) 수정
+                            a(href=routes.boardDelete(board._id)) 삭제
         div.slide#jsSlide                
             img.slide__image(src=board.imageUrls[0])
             img.slide__image(src=board.imageUrls[1])
@@ -21,7 +27,6 @@ block content
             h3=board.address
         div.board-detail__map#jsDetailMap
         p.board-detail__text=board.description 
-        span.board-detail__views 조회 #{board.views}
         
         
 

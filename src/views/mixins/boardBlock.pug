@@ -1,0 +1,7 @@
+mixin boardBlock(board)
+    .boardBlock
+        a(href=routes.boardDetail(board._id))
+            img(src=board.imageUrls[0])
+            h4=board.title
+            h5=board.cost
+            h6=board.address

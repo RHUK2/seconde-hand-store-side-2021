@@ -9,10 +9,12 @@ const UserSchema = new mongoose.Schema({
   naverId: Number,
   kakaoId: Number,
   googleId: Number,
-  boards: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Board'
-  }
+  boards: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Board'
+    }
+  ]
 });
 
 UserSchema.plugin(passportLocalMongoose, { usernameField: 'email' });

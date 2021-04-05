@@ -21,8 +21,8 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      background-color: $blue;
-      color: white;
+      background-color: $yellow;
+      font-weight: 500;
       border-radius: 20px;
       cursor: pointer;
       z-index: 1;
@@ -47,7 +47,7 @@
   }
   &__title:focus,
   &__cost:focus {
-    border-bottom: 3px solid $blue;
+    border-bottom: 3px solid $yellow;
   }
   &__select {
     margin-bottom: 20px;
@@ -101,9 +101,9 @@
     font-size: 18px;
   }
   &__submit {
-    background-color: $blue;
+    background-color: $yellow;
     border-radius: 20px;
-    color: white;
+    font-weight: 700;
     border: none;
     padding: 10px;
     font-size: 18px;
