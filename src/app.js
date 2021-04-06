@@ -62,7 +62,9 @@ passport.use(
     {
       clientID: process.env.NAVER_ID,
       clientSecret: process.env.NAVER_SECRET,
-      callbackURL: process.env.NAVER_CALLBACK_URL
+      callbackURL: process.env.PRODUCTION
+        ? process.env.NAVER_HEROKU_CALLBACK_URL
+        : process.env.NAVER_CALLBACK_URL
     },
     naverLoginCallback
   )
@@ -72,7 +74,9 @@ passport.use(
     {
       clientID: process.env.KAKAO_ID,
       clientSecret: '',
-      callbackURL: process.env.KAKAO_CALLBACK_URL
+      callbackURL: process.env.PRODUCTION
+        ? process.env.KAKAO_HEROKU_CALLBACK_URL
+        : process.env.KAKAO_CALLBACK_URL
     },
     kakaoLoginCallback
   )
@@ -82,7 +86,9 @@ passport.use(
     {
       clientID: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
-      callbackURL: process.env.GOOGLE_CALLBACK_URL
+      callbackURL: process.env.PRODUCTION
+        ? process.env.GOOGLE_HEROKU_CALLBACK_URL
+        : process.env.GOOGLE_CALLBACK_URL
     },
     googleLoginCallback
   )
