@@ -39,8 +39,9 @@
       padding: 0px 15px;
       i {
         cursor: pointer;
-        color: rgba(0, 0, 0, 0.3);
-        font-size: 30px;
+        color: $darkgray;
+        text-shadow: 1px 1px 5px white;
+        font-size: 50px;
       }
     }
   }

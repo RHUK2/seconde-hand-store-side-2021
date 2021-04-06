@@ -11,11 +11,12 @@ export const postBoardUpload = async (req, res) => {
     body: { title, cost, description, areas, address, coords },
     files
   } = req;
+  const brDescription = description.replaceAll(/\r\n/g, '<br>');
   try {
     const newBoard = await Board.create({
       title,
       cost,
-      description,
+      description: brDescription,
       areas,
       address,
       coords,
