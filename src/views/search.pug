@@ -2,7 +2,7 @@ extends layouts/main
 include mixins/boardBlock
 
 block content 
-    h.home-title 전체
+    h.home-title 검색: #{term}
     div.home-board
         each board in boards
             +boardBlock(board)

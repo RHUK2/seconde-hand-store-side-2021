@@ -9,8 +9,8 @@ header.header#jsHeader
         i.fas.fa-search#jsHeaderSearch
         
 div.search#jsSearch
-    form.search__form(action="#", method="get")
-            input(type='text', placeholder="검색", name="term")
+    form.search__form(action=routes.search, method="get")
+            input#jsSearchText(type='text', placeholder="검색", name="term")
     div.search__icon    
         i.fas.fa-times#jsSearchTimes
 

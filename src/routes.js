@@ -3,11 +3,11 @@ const HOME = '/';
 const JOIN = '/join';
 const LOGIN = '/login';
 const LOGOUT = '/logout';
+const SEARCH = '/search';
 // User Router
 const USER = '/user';
 const USER_PROFILE = '/:id/profile';
 const USER_EDIT = '/:id/edit';
-const USER_DELETE = '/:id/delete';
 // Board Router
 const BOARD = '/board';
 const BOARD_UPLOAD = '/upload';
@@ -31,6 +31,7 @@ const routes = {
   join: JOIN,
   login: LOGIN,
   logout: LOGOUT,
+  search: SEARCH,
   user: USER,
   userProfile: id => {
     if (id) return `/user/${id}/profile`;
@@ -39,10 +40,6 @@ const routes = {
   userEdit: id => {
     if (id) return `/user/${id}/edit`;
     return USER_EDIT;
-  },
-  userDelete: id => {
-    if (id) return `/user/${id}/delete`;
-    return USER_DELETE;
   },
   board: BOARD,
   boardUpload: BOARD_UPLOAD,

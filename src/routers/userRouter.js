@@ -1,6 +1,5 @@
 import express from 'express';
 import {
-  getUserDelete,
   getUserEdit,
   getUserProfile,
   postUserEdit
@@ -14,7 +13,5 @@ userRouter.get(routes.userProfile(), getUserProfile);
 
 userRouter.get(routes.userEdit(), onlyPrivate, getUserEdit);
 userRouter.post(routes.userEdit(), uploadAvatar, postUserEdit);
-
-userRouter.get(routes.userDelete(), onlyPrivate, getUserDelete);
 
 export default userRouter;

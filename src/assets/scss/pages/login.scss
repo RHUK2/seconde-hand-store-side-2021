@@ -29,6 +29,7 @@
       border: none;
       cursor: pointer;
       outline: none;
+      box-shadow: inset 0 -5px 0 0 rgb(0 0 0 / 15%);
     }
   }
   &__join-link {
@@ -43,6 +44,7 @@
     border-radius: 50px;
     font-weight: 700;
     font-size: 23px;
+    box-shadow: inset 0 -5px 0 0 rgb(0 0 0 / 15%);
   }
 }
 @media all and (min-width: 1023px) {

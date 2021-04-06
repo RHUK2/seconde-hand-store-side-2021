@@ -1,20 +1,20 @@
 import User from '../models/User';
 import routes from '../routes';
 import { s3 } from '../middleware';
-
+// User Profile
 export const getUserProfile = async (req, res) => {
   const {
     params: { id }
   } = req;
   try {
     const user = await User.findOne({ _id: id }).populate('boards');
-    console.log(user);
     res.render('userProfile', { pageTitle: '프로필', user });
   } catch (error) {
     console.log(error);
     res.redirect(routes.home);
   }
 };
+// User Edit
 export const getUserEdit = async (req, res) => {
   const {
     params: { id }
@@ -29,8 +29,8 @@ export const getUserEdit = async (req, res) => {
 };
 export const postUserEdit = async (req, res) => {
   const {
-    body: { nickname },
     params: { id },
+    body: { nickname },
     file
   } = req;
   try {
@@ -61,14 +61,9 @@ export const postUserEdit = async (req, res) => {
         avatarKey: file ? file.key : req.user.avatarKey
       }
     );
-
     res.redirect(routes.userProfile(id));
   } catch (error) {
     console.log(error);
     res.redirect(routes.home);
   }
-};
-// to do
-export const getUserDelete = (req, res) => {
-  res.render('home');
 };

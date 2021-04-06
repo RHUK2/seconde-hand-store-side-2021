@@ -43,7 +43,11 @@ app.use(
     secret: process.env.COOKIE_SECRET,
     resave: false,
     saveUninitialized: true,
-    store: MongoStore.create({ mongoUrl: process.env.MONGO_URL })
+    store: MongoStore.create({
+      mongoUrl: process.env.PRODUCTION
+        ? process.env.ATLAS_URL
+        : process.env.MONGO_URL
+    })
   })
 );
 app.use(flash());
@@ -61,16 +65,6 @@ passport.use(
       callbackURL: process.env.NAVER_CALLBACK_URL
     },
     naverLoginCallback
-  )
-);
-passport.use(
-  new KakaoStrategy(
-    {
-      clientID: process.env.KAKAO_ID,
-      clientSecret: '',
-      callbackURL: process.env.KAKAO_CALLBACK_URL
-    },
-    kakaoLoginCallback
   )
 );
 passport.use(

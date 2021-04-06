@@ -10,6 +10,7 @@ const blank = document.getElementById('jsBlank');
 // Search
 const search = document.getElementById('jsSearch');
 const searchTimes = document.getElementById('jsSearchTimes');
+const searchText = document.getElementById('jsSearchText');
 // Enter
 const enterAvatar = document.getElementById('jsEnterAvatar');
 const enterListUser = document.getElementById('jsEnterListUser');
@@ -26,6 +27,7 @@ const closeNav = () => {
 
 const openSearch = () => {
   search.classList.add('show-search');
+  searchText.focus();
 };
 
 const closeSearch = () => {

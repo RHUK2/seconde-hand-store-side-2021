@@ -2,7 +2,7 @@ import { s3 } from '../middleware';
 import Board from '../models/Board';
 import User from '../models/User';
 import routes from '../routes';
-
+// Upload
 export const getBoardUpload = (req, res) => {
   res.render('boardUpload', { pageTitle: '업로드' });
 };
@@ -31,9 +31,9 @@ export const postBoardUpload = async (req, res) => {
   } catch (error) {
     console.log(error);
     res.redirect(`/board${routes.boardUpload}`);
-    res.status(400);
   }
 };
+// Board Detail
 export const getBoardDetail = async (req, res) => {
   const {
     params: { id }
@@ -46,6 +46,7 @@ export const getBoardDetail = async (req, res) => {
     res.redirect(routes.home);
   }
 };
+// Board Edit
 export const getBoardEdit = async (req, res) => {
   const {
     params: { id }
@@ -55,6 +56,7 @@ export const getBoardEdit = async (req, res) => {
     res.render('boardEdit', { pageTitle: '포스트 수정', board });
   } catch (error) {
     console.log(error);
+    res.redirect(routes.home);
   }
 };
 export const postBoardEdit = async (req, res) => {
@@ -83,9 +85,10 @@ export const postBoardEdit = async (req, res) => {
     res.redirect(routes.boardDetail(board._id));
   } catch (error) {
     console.log(error);
+    res.redirect(routes.home);
   }
 };
-
+// Board Delete
 export const getBoardDelete = async (req, res) => {
   const {
     params: { id }
@@ -117,7 +120,7 @@ export const getBoardDelete = async (req, res) => {
     res.redirect(routes.home);
   }
 };
-
+// Board Area
 export const getBoardArea = async (req, res) => {
   const {
     params: { area }
@@ -130,7 +133,7 @@ export const getBoardArea = async (req, res) => {
     res.render('boardArea', { pageTitle: area, area, boards: [] });
   }
 };
-
+// API getCoords
 export const getCoords = async (req, res) => {
   const {
     params: { id }

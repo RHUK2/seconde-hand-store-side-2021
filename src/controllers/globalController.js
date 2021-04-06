@@ -2,17 +2,34 @@ import passport from 'passport';
 import routes from '../routes';
 import User from '../models/User';
 import Board from '../models/Board';
-
+// Home
 export const getHome = async (req, res) => {
+  let boards = [];
   try {
-    const boards = await Board.find({}).sort({ _id: -1 });
-    res.render('home', { pageTitle: '홈', boards });
+    boards = await Board.find({}).sort({ _id: -1 });
   } catch (error) {
     console.log(error);
-    res.render('home', { pageTitle: '홈', boards: [] });
+  } finally {
+    res.render('home', { pageTitle: '홈', boards });
   }
 };
-
+// Search
+export const getSearch = async (req, res) => {
+  const {
+    query: { term }
+  } = req;
+  let boards = [];
+  try {
+    boards = await Board.find({
+      title: { $regex: term, $options: 'i' }
+    });
+  } catch (error) {
+    console.log(error);
+  } finally {
+    res.render('search', { pageTitle: '검색', term, boards });
+  }
+};
+// Join
 export const getJoin = (req, res) => {
   res.render('join', { pageTitle: '회원가입' });
 };
@@ -54,7 +71,7 @@ export const postJoin = async (req, res, next) => {
     res.status(400);
   }
 };
-
+// Login
 export const getLogin = (req, res) => {
   res.render('login', { pageTitle: '로그인' });
 };
@@ -69,7 +86,7 @@ export const getLogout = (req, res) => {
   req.flash('success', '로그아웃 성공!');
   res.redirect(routes.home);
 };
-
+// Naver Login
 export const naverLogin = passport.authenticate('naver', {
   successFlash: '로그인 성공!',
   failureFlash: '로그인 실패.'
@@ -96,7 +113,7 @@ export const naverLoginCallback = async (_, __, profile, done) => {
     return done(error);
   }
 };
-
+// Kakao Login
 export const kakaoLogin = passport.authenticate('kakao', {
   successFlash: '로그인 성공!',
   failureFlash: '로그인 실패.'
@@ -126,6 +143,7 @@ export const kakaoLoginCallback = async (_, __, profile, done) => {
     return done(error);
   }
 };
+//  Google Login
 export const googleLogin = passport.authenticate('google', {
   scope: ['email', 'profile'],
   successFlash: '로그인 성공!',
