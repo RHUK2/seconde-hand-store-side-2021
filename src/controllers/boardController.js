@@ -13,7 +13,7 @@ export const postBoardUpload = async (req, res) => {
   } = req;
   const brDescription = description.replaceAll(/\r\n/g, '<br>');
   try {
-    const newBoard = await Board.create({
+    let newBoard = await Board.create({
       title,
       cost,
       description: brDescription,
@@ -25,9 +25,9 @@ export const postBoardUpload = async (req, res) => {
     files.forEach(file => {
       newBoard.imageUrls.push(file.location);
     });
-    await newBoard.save();
+    newBoard = await newBoard.save();
     req.user.boards.push(newBoard._id);
-    await req.user.save();
+    req.user = await req.user.save();
     res.redirect(routes.boardDetail(newBoard._id));
   } catch (error) {
     console.log(error);
