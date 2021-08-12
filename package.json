@@ -5,13 +5,13 @@
   "main": "init.js",
   "scripts": {
     "dev:server": "nodemon --exec babel-node src/init.js --delay 1",
-    "build:server": "babel src --out-dir build --ignore 'src/assets' --ignore 'src/static' --ignore 'src/webpack.config.js'",
     "dev:assets": "cd src && WEBPACK_ENV=development webpack -w",
+    "build:server": "babel src --out-dir build --ignore 'src/assets' --ignore 'src/static' --ignore 'src/webpack.config.js'",
     "build:assets": "cd src && WEBPACK_ENV=production webpack",
     "copyAll": "cp -R src/static build && cp -R src/views build",
     "prebuild": "rm -rf build",
     "build": "npm run build:server && npm run build:assets && npm run copyAll",
-    "prestart":"npm run build",
+    "prestart": "npm run build",
     "start": "PRODUCTION=true node build/init.js"
   },
   "repository": {
