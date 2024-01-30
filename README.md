@@ -1,14 +1,14 @@
-***
+# 프로젝트 소개
 
-## 프로젝트 소개
-
+<br>
+<center>
 <img src="https://user-images.githubusercontent.com/75672249/117419208-48016a80-af57-11eb-9b4d-e85deec186a3.png" width="300px" />
+</center>
+<br>
 
 서버 사이드 렌더링 방식으로 CRUD 기능이 구현된 웹 페이지를 제작해보려는 목표를 가지고 개발하였습니다.
 
 박스마켓은 기존 중고 거래 사이트에 직거래 장소를 지도로 표시할 수 있는 기능을 추가하여 편의성을 추가한 사이트입니다.
-
-***
 
 ## 사용 기술 스택
 
@@ -22,28 +22,26 @@
 
   ![pug](https://img.shields.io/badge/Pug-E3C29B?style=for-the-badge&logo=pug&logoColor=black)
 
-- 서버  
+- 서버
 
   ![nodejs](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)
-  ![express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)  
-  
+  ![express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)
+
 - 데이터베이스
 
-  ![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white) 
+  ![mongodb](https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white)
 
 - 파일 업로드
-  
+
   ![aws](https://img.shields.io/badge/Amazon_AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
 
 - 배포 환경
 
   ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
 
-***
-
 ## 프로젝트 기능
 
-### 반응형  
+### 반응형
 
 ![박스마켓_반응형](https://user-images.githubusercontent.com/75672249/117530744-d9391580-b019-11eb-98d2-66e691cc5f61.gif)
 
@@ -70,11 +68,9 @@
 
 - multerS3 미들웨어를 이용하여 AWS S3에 파일 업로드
 - 카카오 맵 API를 이용한 직거래 장소 공유
-  
+
 ### 검색
 
 ![박스마켓_검색](https://user-images.githubusercontent.com/75672249/117532338-012c7700-b022-11eb-9f11-96b5d598fbbe.gif)
 
 - URL로 넘어오는 쿼리 데이터를 이용한 검색 기능
-
-***
